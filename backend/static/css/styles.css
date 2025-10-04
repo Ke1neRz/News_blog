@@ -1,0 +1,28 @@
+body {
+  background-image: url('../img/back-blue.jpg');
+}
+
+.navbar {
+  background: linear-gradient(to right, #000000, #333333);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.feedback-container {
+  background: #3380cc;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+.form-title {
+  color: #333;
+}
+.required::after {
+  content: " *";
+  color: #dc3545;
+}
+.is-invalid {
+  border-color: #dc3545;
+}
+.invalid-feedback {
+  display: block;
+}

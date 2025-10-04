@@ -1,0 +1,32 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row mt-1">
+            <div class="col-lg-2">
+                {% comment %}  {% endcomment %}
+            </div>
+            <div class="col-lg-10">
+                <h1 class="mt-5 pt-5 mb-4 text-light"><strong>Наши контакты</strong></h1>
+                <div class="contact-item">
+                    <h3 class="fs-4 fw-bold text-primary">📧 Электронная почта</h3>
+                    <p class="fs-5 fw-semibold text-light">django.superuser228@gmail.com</p>
+                </div>
+                
+                <div class="contact-item mt-3">
+                    <h3 class="fs-4 fw-bold text-primary">📞 Телефон</h3>
+                    <p class="fs-5 fw-semibold text-light">+7 994 016 80 77</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-3 bg-dark fixed-bottom">
+    <div class="container">
+        <p class="m-0 text-center text-white">Created by &copy; Ke1neR 2025. <a href="https://github.com/Ke1neRz/News_blog" class="link">Github</a></p>
+    </div> 
+</footer>
+{% endblock content %}
