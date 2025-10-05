@@ -5,9 +5,14 @@ from django.conf import settings
 
 from .forms import FeedbackForm
 from .models import Feedback
+from news.models import Article
 
 def index_view(request):
-    context = {'title': 'Новостной блог!'}
+    news = Article.objects.filter(status='published')[:2]
+    context = {
+        'title': 'Новостной блог!',
+        'news': news,
+    }
     return render(request, "main/index.html", context)
 
 def about_view(request):
@@ -42,7 +47,7 @@ def feedback_view(request):
             )
 
             
-            messages.success(request, f'Спасибо {name}!\nВаше сообщение: "{message}".Успешно отправлено.')
+            messages.success(request, f'Спасибо {name}!\nВаше сообщение: "{message}". Успешно отправлено.')
             return redirect('/feedback')
     else:
         form = FeedbackForm()
