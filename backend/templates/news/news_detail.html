@@ -9,7 +9,16 @@
                 {% comment %}  {% endcomment %}
             </div>
             <div class="col-lg-10">
-                <h1 class="mt-5 pt-5 text-light"><strong>Добро пожаловать в Новостной Блог!</strong></h1>
+                <div class="row mt-3 mb-3">
+                    <div class="col-4">
+                        <img src="{{news.image.url}}" class="img-fluid rounded-start" alt="{{ news_detail.title }}">
+                    </div>
+                    <div class="col-8">
+                        <h1 class="text-light"><strong>{{ news.title }}</strong></h1>
+                        <p class="text-secondary">Дата обновления статьи: {{ news.updated_at }}</p>
+                    </div>
+                </div>
+                <p class="text-light">{{ news.content|linebreaksbr }}</p>
             </div>
         </div>
     </div>

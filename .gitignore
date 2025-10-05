@@ -1,0 +1,6 @@
+backend/venv
+backend/media
+backend/staticfiles
+backend/.env
+
+help.txt

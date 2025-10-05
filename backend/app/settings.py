@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     
     # my-app
     'main',
+    'news',
 ]
 
 MIDDLEWARE = [

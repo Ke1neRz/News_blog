@@ -1,0 +1,40 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block content %}
+<section>
+    <div class="container">
+        <h1 class="mt-5 text-light"><strong>Новости</strong></h1>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 mt-1 ">
+            {% for news_detail in all_news %}
+            <div class="col">
+                <div class="card border-primary mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{news_detail.image.url}}" class="img-fluid rounded-start" alt="{{ news_detail.title }}">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="{% url "news:news" news_detail.id%}" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+                                        {{ news_detail.title|truncatechars:50 }}
+                                    </a>
+                                </h5>
+                                <p class="card-text">{{ news_detail.content|truncatechars:100 }}</p>
+                                <p class="card-text"><small class="text-body-secondary">Дата обновления: {{ news_detail.updated_at }}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<footer class="py-3 bg-dark fixed-bottom">
+    <div class="container">
+        <p class="m-0 text-center text-secondary">Created by &copy; Ke1neR 2025. <a href="https://github.com/Ke1neRz/News_blog" class="link">Github</a></p>
+    </div>
+</footer>
+{% endblock content %}
